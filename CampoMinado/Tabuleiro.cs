@@ -10,11 +10,11 @@ namespace Interface
     {
         private Int32 qtdBombas;
         private Casa[,] tabuleiro;
-        private int qtdParaMarcar = 24;
+        private int qtdParaMarcar = 10;
 
         public Tabuleiro()
         {
-            tabuleiro = new Casa[16, 10];
+            tabuleiro = new Casa[6, 6];
         }
 
         public void SetQtdParaMarcar(int qtdParaMarcar)
@@ -178,20 +178,20 @@ namespace Interface
                 VerificaDirVazio(linha, coluna);
                 VerificaBaixoVazio(linha, coluna);
             }
-            else if (linha == 0 && coluna == 9)
+            else if (linha == 0 && coluna == 5)
             {
                 VerificaBaixoVazio(linha, coluna);
                 VerificaEsqVazio(linha, coluna);
                 VerificaEsqBaixoVazio(linha, coluna);
             }
-            else if (linha == 15 && coluna == 0)
+            else if (linha == 5 && coluna == 0)
             {
                 VerificaCimaVazio(linha, coluna);
                 VerificaDirVazio(linha, coluna);
                 VerificaDirCimaVazio(linha, coluna);
 
             }
-            else if (linha == 15 && coluna == 9)
+            else if (linha == 5 && coluna == 5)
             {
                 VerificaEsqVazio(linha, coluna);
                 VerificaCimaVazio(linha, coluna);
@@ -213,7 +213,7 @@ namespace Interface
                 VerificaEsqBaixoVazio(linha, coluna);
                 VerificaDirBaixoVazio(linha, coluna);
             }
-            else if (coluna == 9)
+            else if (coluna == 5)
             {
                 VerificaBaixoVazio(linha, coluna);
                 VerificaCimaVazio(linha, coluna);
@@ -221,7 +221,7 @@ namespace Interface
                 VerificaEsqCimaVazio(linha, coluna);
                 VerificaEsqBaixoVazio(linha, coluna);
             }
-            else if (linha == 15)
+            else if (linha == 5)
             {
                 VerificaCimaVazio(linha, coluna);
                 VerificaDirVazio(linha, coluna);
@@ -258,21 +258,21 @@ namespace Interface
                             VerificaBaixo(i, j);
                             AdicionaQtdBombas(i, j);
                         }
-                        else if (i == 0 && j == 9)
+                        else if (i == 0 && j == 5)
                         {
                             VerificaBaixo(i, j);
                             VerificaEsq(i, j);
                             VerificaEsqBaixo(i, j);
                             AdicionaQtdBombas(i, j);
                         }
-                        else if (i == 15 && j == 0)
+                        else if (i == 5 && j == 0)
                         {
                             VerificaCima(i, j);
                             VerificaDir(i, j);
                             VerificaDirCima(i, j);
                             AdicionaQtdBombas(i, j);
                         }
-                        else if (i == 15 && j == 9)
+                        else if (i == 5 && j == 5)
                         {
                             VerificaEsq(i, j);
                             VerificaCima(i, j);
@@ -297,7 +297,7 @@ namespace Interface
                             VerificaDirBaixo(i, j);
                             AdicionaQtdBombas(i, j);
                         }
-                        else if (j == 9)
+                        else if (j == 5)
                         {
                             VerificaBaixo(i, j);
                             VerificaCima(i, j);
@@ -306,7 +306,7 @@ namespace Interface
                             VerificaEsqBaixo(i, j);
                             AdicionaQtdBombas(i, j);
                         }
-                        else if (i == 15)
+                        else if (i == 5)
                         {
                             VerificaCima(i, j);
                             VerificaDir(i, j);
@@ -352,10 +352,10 @@ namespace Interface
             int coluna;
             int qtdBombasTabuleiro = 0;
 
-            while (qtdBombasTabuleiro != 24)
+            while (qtdBombasTabuleiro != 10)
             {
-                linha = numeroRand.Next(16);
-                coluna = numeroRand.Next(10);
+                linha = numeroRand.Next(6);
+                coluna = numeroRand.Next(6);
 
                 if (tabuleiro[linha, coluna] == null)
                 {

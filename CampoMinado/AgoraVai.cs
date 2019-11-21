@@ -14,7 +14,7 @@ namespace Interface
     public partial class AgoraVai : Form
     {
         private Jogo jogo = new Jogo();
-        private Button[,] tabuleiro = new Button[16, 10];
+        private Button[,] tabuleiro = new Button[6, 6];
         private Button voltarInstrucoes = new Button();
         private Button voltarJogo = new Button();
         private Button reiniciar = new Button();
@@ -38,26 +38,26 @@ namespace Interface
         {
             botoes.Visible = false;
 
-            coisas.Height = 580;
-            coisas.Width = 620;
+            coisas.Height = 0680;
+            coisas.Width = 720;
 
-            grid.Height = 580;
-            grid.Width = 370;
+            grid.Height = 300;
+            grid.Width = 250;
 
-            tempo.SetBounds(370, 20, 200, 20);
+            tempo.SetBounds(340, 20, 200, 20);
             tempo.Font = new Font("Arial", 10);
             tempo.Text = "Tempo: 00:00";
 
-            marcados.SetBounds(370, 40, 200, 20);
+            marcados.SetBounds(340, 40, 200, 20);
             marcados.Font = new Font("Arial", 10);
             marcados.Text = "Quantidade: 10";
 
-            reiniciar.SetBounds(370, 60, 100, 30);
+            reiniciar.SetBounds(340, 60, 100, 30);
             reiniciar.Font = new Font("Arial", 10);
             reiniciar.Text = "Reiniciar";
             reiniciar.Click += new EventHandler(ReiniciarClick);
 
-            voltarJogo.SetBounds(370, 95, 100, 30);
+            voltarJogo.SetBounds(340, 95, 100, 30);
             voltarJogo.Font = new Font("Arial", 10);
             voltarJogo.Text = "Voltar";
             voltarJogo.Click += new EventHandler(VoltarJogoClick);
@@ -86,7 +86,7 @@ namespace Interface
             relogio.Reset();
             timer.Stop();
             tempo.Text = "Tempo: 00:00";
-            marcados.Text = "Quantidade: 24";
+            marcados.Text = "Quantidade: 10";
             coisas.Controls.Remove(grid);
             grid.Controls.Clear();
             jogo.IniciarPartida();
@@ -201,6 +201,7 @@ namespace Interface
                             else if (jogo.GetCampo().GetTabuleiro()[i, j].GetTemBomba())
                             {
                                 tabuleiro[i, j].Image = global::CampoMinado.Properties.Resources.bomba;
+                                tabuleiro[i, j].BackColor = Color.Green;
                             }
                             else if (jogo.GetCampo().GetTabuleiro()[i, j].GetValor() != 0)
                             {
@@ -231,11 +232,14 @@ namespace Interface
                             {
                                 tabuleiro[i, j].Text = null;
                                 tabuleiro[i, j].Enabled = false;
+                                tabuleiro[i, j].BackColor = Color.Blue;
+
                             }
                             else if (jogo.GetCampo().GetTabuleiro()[i, j].GetValor() != 0)
                             {
                                 tabuleiro[i, j].Text = jogo.GetCampo().GetTabuleiro()[i, j].GetValor().ToString();
                                 tabuleiro[i, j].Enabled = false;
+                                tabuleiro[i, j].BackColor = Color.Blue;
                             }
                         }
                         else

@@ -31,7 +31,6 @@
             System.Windows.Forms.Button botaoJogar;
             this.labelMenu = new System.Windows.Forms.Label();
             this.botaoSair = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.botoes = new System.Windows.Forms.GroupBox();
             botaoJogar = new System.Windows.Forms.Button();
             this.botoes.SuspendLayout();
@@ -40,9 +39,10 @@
             // botaoJogar
             // 
             botaoJogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            botaoJogar.Location = new System.Drawing.Point(100, 283);
+            botaoJogar.Location = new System.Drawing.Point(133, 348);
+            botaoJogar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             botaoJogar.Name = "botaoJogar";
-            botaoJogar.Size = new System.Drawing.Size(135, 40);
+            botaoJogar.Size = new System.Drawing.Size(180, 49);
             botaoJogar.TabIndex = 1;
             botaoJogar.Text = "Jogar";
             botaoJogar.UseVisualStyleBackColor = true;
@@ -52,57 +52,50 @@
             // 
             this.labelMenu.AutoSize = true;
             this.labelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMenu.Location = new System.Drawing.Point(23, 136);
+            this.labelMenu.Location = new System.Drawing.Point(31, 167);
+            this.labelMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMenu.Name = "labelMenu";
-            this.labelMenu.Size = new System.Drawing.Size(303, 46);
+            this.labelMenu.Size = new System.Drawing.Size(310, 46);
             this.labelMenu.TabIndex = 0;
-            this.labelMenu.Text = "Campo Minado";
+            this.labelMenu.Text = "Batalha Minada";
             this.labelMenu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // botaoSair
             // 
             this.botaoSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botaoSair.Location = new System.Drawing.Point(100, 375);
+            this.botaoSair.Location = new System.Drawing.Point(133, 405);
+            this.botaoSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.botaoSair.Name = "botaoSair";
-            this.botaoSair.Size = new System.Drawing.Size(135, 40);
+            this.botaoSair.Size = new System.Drawing.Size(180, 49);
             this.botaoSair.TabIndex = 2;
             this.botaoSair.Text = "Sair";
             this.botaoSair.UseVisualStyleBackColor = true;
             this.botaoSair.Click += new System.EventHandler(this.SairClick);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(100, 329);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Instruções";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.InformacoesClick);
             // 
             // botoes
             // 
             this.botoes.BackColor = System.Drawing.SystemColors.Control;
             this.botoes.Controls.Add(this.labelMenu);
             this.botoes.Controls.Add(this.botaoSair);
-            this.botoes.Controls.Add(this.button1);
             this.botoes.Controls.Add(botaoJogar);
-            this.botoes.Location = new System.Drawing.Point(67, 13);
+            this.botoes.Location = new System.Drawing.Point(89, 16);
+            this.botoes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.botoes.Name = "botoes";
-            this.botoes.Size = new System.Drawing.Size(345, 555);
+            this.botoes.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botoes.Size = new System.Drawing.Size(460, 683);
             this.botoes.TabIndex = 4;
             this.botoes.TabStop = false;
             // 
             // AgoraVai
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(486, 581);
+            this.ClientSize = new System.Drawing.Size(610, 717);
             this.Controls.Add(this.botoes);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AgoraVai";
-            this.Text = "CampoMinado";
+            this.Text = "Batalha Minada";
             this.botoes.ResumeLayout(false);
             this.botoes.PerformLayout();
             this.ResumeLayout(false);
@@ -113,7 +106,6 @@
 
         private System.Windows.Forms.Label labelMenu;
         private System.Windows.Forms.Button botaoSair;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox botoes;
     }
 }
